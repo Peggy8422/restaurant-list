@@ -39,7 +39,7 @@ Express is running on http://localhost:3000
 7. open the browser and get to http://localhost:3000
 8. to stop listening, press `ctrl+C`
 
-## Develop Tools and Packages U
+## Develop Tools and Packages Used
 - Node.js @16.16.0
 - Express @4.16.4
 - Express-handlebars @3.0.0
