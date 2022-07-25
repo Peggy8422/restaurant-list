@@ -36,15 +36,13 @@ app.get('/search', (req, res) => {
   if (!keyword.length) {
     alertBox = 'show'
   }
-  let showNoResults = false
+  
   const filteredRestaurant = restaurantList.results.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword.toLowerCase()) || restaurant.category.toLowerCase().includes(keyword.toLowerCase())
   })
-  // show "No Results" page, if no item includes keyword
-  if (filteredRestaurant.length === 0) {
-    showNoResults = true
-  }
-  res.render('index', {restaurants: filteredRestaurant, keyword, alertMsg: alertBox, hasNoResults: showNoResults})
+
+  // show "No Results" page, if no item includes keyword(filteredRestaurant.length === 0)
+  res.render('index', {restaurants: filteredRestaurant, keyword, alertMsg: alertBox, hasNoResults: !filteredRestaurant.length})
 })
 
 //Start and listen to app
